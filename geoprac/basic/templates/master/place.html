@@ -1,0 +1,21 @@
+{% extends "master/base.html" %}
+
+{% block content %}
+
+  <p>places</p>
+
+  <ul>
+  	{% for place in places %}
+  	  <li>
+  	  	<a href="{% url 'place' place.id %}">{{ place }}</a>
+  	  </li>
+  	{% empty %}
+  	  <li>No places have been added.</li>
+  	{% endfor %}
+  </ul>
+
+  <a href="{% url 'new_place' %}">Add a new place:</a>
+
+{% endblock content %}
+
+
